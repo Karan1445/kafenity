@@ -47,7 +47,7 @@
 :root {
   --primary: #2e7d32;
   --primary-dark: #1b5e20;
-  --primary-light: #4caf50;
+  --primary-light: #538f55;
   --secondary: #f7fff7;
   --accent: #ff9800;
   --text: #333;
@@ -129,7 +129,8 @@ body {
 }
 
 .category-content.open {
-  max-height: 2000px;
+  max-height: none; /* Changed from 2000px to none to ensure all items show */
+  overflow: visible;
 }
 
 .items-grid {
@@ -140,9 +141,9 @@ body {
 }
 
 .item-card {
-  background: white;
+  background: rgb(196, 212, 200);
   border-radius: 12px;
-  padding: 16px;
+  padding: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -151,6 +152,7 @@ body {
   border: 1px solid var(--border);
   transform: translateY(0);
   animation: slideUp 0.4s ease forwards;
+  min-height: 120px; /* Added minimum height */
 }
 
 @keyframes slideUp {
@@ -171,12 +173,17 @@ body {
 
 .item-info {
   margin-bottom: 15px;
+  flex: 1; /* Added to allow flexible growth */
+  min-height: auto; /* Changed from fixed height */
 }
 
 .item-name {
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 5px;
+  word-break: break-word; /* Added to handle long words */
+  white-space: normal; /* Changed from nowrap */
+  overflow: visible; /* Changed from hidden */
 }
 
 .item-price {
@@ -347,12 +354,15 @@ body {
 
 .cart-item-info {
   flex: 1;
+  min-width: 0; /* Added to prevent overflow */
 }
 
 .cart-item-name {
   font-weight: 500;
   margin-bottom: 5px;
   font-size: 16px;
+  word-break: break-word; /* Added to handle long names */
+  white-space: normal; /* Changed from nowrap */
 }
 
 .cart-item-price {
@@ -364,6 +374,7 @@ body {
 .cart-item-actions {
   display: flex;
   gap: 10px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 .cart-btn {
@@ -527,7 +538,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
+  box-shadow: 0 6px 15px rgba(152, 203, 155, 0.4);
 }
 
 .order-button:hover {
