@@ -345,7 +345,7 @@ const items = {
 
     const orderTime = new Date().toLocaleString();
     const orderDetails = Object.values(cart)
-      .map((item) => `${item.name} x${item.quantity} = ₹${item.price * item.quantity}`)
+      .map((item) => `${item.name} x*${item.quantity}* = ₹${item.price * item.quantity}`)
       .join('\n');
 
     const text = ` *New Order*\n\n Name: *${name}*\n Table: *${dineType === 'dine' ? table : 'Takeaway'}*\n Time: ${orderTime}\n\n${orderDetails}\n\n *Total*: ₹${totalAmount}`;
