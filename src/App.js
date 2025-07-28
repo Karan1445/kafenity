@@ -3,76 +3,147 @@ import './App.css';
 
 export default function App() {
   const categories = [
-    { name: 'Rice Mania' },
-    { name: 'Chatkara Chinese' },
-    { name: 'Mocktails' },
-    { name: 'Beverages' },
-    { name: 'Signature Burgers' },
-    { name: 'Sandwiches' },
-    { name: 'All Day Snacks' },
-  ];
+  { name: 'Soups' },
+  { name: 'Tandoor Se' },
+  { name: 'Indian Main Course' },
+  { name: 'Indian Breads' },
+  { name: 'Rice Mania' },
+  { name: 'Chatkara Chinese' },
+  { name: 'Mocktails' },
+  { name: 'Beverages' },
+  { name: 'Signature Burgers' },
+  { name: 'Sandwiches' },
+  { name: 'All Day Snacks' }
+];
 
-  const items = {
-    'Rice Mania': [
-      { name: 'Schezwan Rice', price: 160 },
-      { name: 'Paneer Biryani', price: 160 },
-      { name: 'Veg Hyderabadi Biryani', price: 160 },
-      { name: 'Cheese Chilli Rice', price: 160 },
-      { name: 'Veg Pulav', price: 160 },
-      { name: 'Tandoori Paneer Pulav', price: 160 },
-      { name: 'Paneer Handi Biryani', price: 160 },
-      { name: 'Veg Biryani', price: 160 },
-    ],
-    'Chatkara Chinese': [
-      { name: 'Veg Triple Rice', price: 160 },
-      { name: 'Veg Triple Noodles', price: 160 },
-      { name: 'Manchurian Rice', price: 160 },
-      { name: 'Manchurian Noodles', price: 160 },
-      { name: 'Schezwan Noodles', price: 160 },
-      { name: 'Fried Rice', price: 160 },
-      { name: 'Schezwan Fried Rice', price: 160 },
-      { name: 'Veg Hakka Noodles', price: 160 },
-    ],
-    'Mocktails': [
-      { name: 'Classic Mojito', price: 110 },
-      { name: 'Blue Lagoon', price: 110 },
-      { name: 'Green Apple Mojito', price: 110 },
-      { name: 'Strawberry Mojito', price: 110 },
-      { name: 'Cranberry Mojito', price: 110 },
-      { name: 'Lime Mojito', price: 110 },
-    ],
-    'Beverages': [
-      { name: 'Cold Coffee', price: 110 },
-      { name: 'KitKat Shake', price: 110 },
-      { name: 'Oreo Shake', price: 110 },
-      { name: 'Chocolate Shake', price: 110 },
-      { name: 'Mango Shake', price: 110 },
-      { name: 'Strawberry Shake', price: 110 },
-      { name: 'Choco-Chip Shake', price: 110 },
-    ],
-    'Signature Burgers': [
-      { name: 'Mexican Aloo Tikki Burger', price: 80 },
-      { name: 'Tandoori Aloo Tikki Burger', price: 80 },
-      { name: 'Veggie Cheese Burger', price: 90 },
-      { name: 'Spicy Paneer Burger', price: 100 },
-      { name: 'Cheesy Paneer Tikka Burger', price: 100 },
-    ],
-    'Sandwiches': [
-      { name: 'Veg Masala Sandwich', price: 80 },
-      { name: 'Veg Cheese Grill', price: 90 },
-      { name: 'Veg Club Sandwich', price: 100 },
-      { name: 'Cheese Chilli Sandwich', price: 90 },
-      { name: 'Paneer Tikka Sandwich', price: 100 },
-    ],
-    'All Day Snacks': [
-      { name: 'Fries', price: 80 },
-      { name: 'Cheese Fries', price: 100 },
-      { name: 'Peri Peri Fries', price: 100 },
-      { name: 'Veg Nuggets (6 pcs)', price: 90 },
-      { name: 'Cheese Balls (6 pcs)', price: 100 },
-      { name: 'Chilli Cheese Nuggets', price: 90 },
-    ]
-  };
+const items = {
+  'Soups': [
+    { name: 'Cream of Tomato Soup', price: 130 },
+    { name: 'Manchurian Soup', price: 130 },
+    { name: 'Manchow Soup', price: 130 },
+    { name: 'Hot & Sour Soup', price: 140 },
+    { name: 'Clear Veg Soup', price: 140 },
+    { name: 'Lemon Coriander Soup', price: 170 },
+    { name: 'Garlic Coriander Soup', price: 170 },
+    { name: 'Cream of Spinach Soup', price: 170 },
+    { name: 'Sweet Corn Soup', price: 170 }
+  ],
+  'Tandoor Se': [
+    { name: 'Paneer Tikka Dry', price: 350 },
+    { name: 'Paneer Hariyali Tikka', price: 350 },
+    { name: 'Paneer Malai Tikka', price: 380 },
+    { name: 'Reshmi Tikka', price: 380 },
+    { name: 'Paneer Achari Tikka', price: 350 },
+    { name: 'Aloo Achari Tikka', price: 210 },
+    { name: 'Harabhara Kebab', price: 210 },
+    { name: 'Banjara Kebab', price: 400 },
+    { name: 'Dahi ke Sholey', price: 350 },
+    { name: 'Veg. Sheekh Kebab', price: 240 }
+  ],
+  'Indian Main Course': [
+    { name: 'Mix Veg.', price: 250 },
+    { name: 'Veg. Toofani', price: 250 },
+    { name: 'Veg. Makhanwala', price: 260 },
+    { name: 'Veg. Handi', price: 260 },
+    { name: 'Veg. Jaipuri', price: 270 },
+    { name: 'Veg. Kadai', price: 270 },
+    { name: 'Veg. Kolhapuri', price: 270 },
+    { name: 'Veg. Angara', price: 280 },
+    { name: 'Paneer Tikka Masala', price: 330 },
+    { name: 'Paneer Butter Masala', price: 350 },
+    { name: 'Paneer Handi', price: 350 },
+    { name: 'Paneer Kadai', price: 350 },
+    { name: 'Paneer Toofani', price: 350 },
+    { name: 'Paneer Patiyala', price: 380 },
+    { name: 'Paneer Bhurji', price: 350 },
+    { name: 'Paneer Angara', price: 380 },
+    { name: 'Paneer Pasanda', price: 380 },
+    { name: 'Paneer Lawabdar', price: 380 },
+    { name: 'Palak Paneer', price: 380 },
+    { name: 'Cheese Angoori', price: 350 },
+    { name: 'Cheese Butter Masala', price: 400 },
+    { name: 'Kaju Curry', price: 400 },
+    { name: 'Kaju Butter Masala', price: 400 },
+    { name: 'Kafenity Special', price: 440 }
+  ],
+  'Indian Breads': [
+    { name: 'Plain Roti', price: 30 },
+    { name: 'Butter Roti', price: 40 },
+    { name: 'Plain Naan', price: 40 },
+    { name: 'Butter Naan', price: 50 },
+    { name: 'Garlic Naan', price: 90 },
+    { name: 'Cheese Naan', price: 110 },
+    { name: 'Cheese Garlic Naan', price: 130 },
+    { name: 'Plain Kulcha', price: 50 },
+    { name: 'Butter Kulcha', price: 60 },
+    { name: 'Dhaba Roti', price: 60 },
+    { name: 'Lachha Paratha', price: 50 },
+    { name: 'Missi Roti', price: 50 },
+    { name: 'Paneer Paratha', price: 150 },
+    { name: 'Stuffed Paratha (Aloo/Gobi)', price: 110 },
+    { name: 'Cheese Chilli Paratha', price: 200 },
+    { name: 'Aloo Cheese Paratha', price: 150 }
+  ],
+  'Rice Mania': [
+    { name: 'Schezwan Rice', price: 160 },
+    { name: 'Paneer Biryani', price: 160 },
+    { name: 'Veg Hyderabadi Biryani', price: 160 },
+    { name: 'Cheese Chilli Rice', price: 160 },
+    { name: 'Veg Pulav', price: 160 },
+    { name: 'Tandoori Paneer Pulav', price: 160 },
+    { name: 'Paneer Handi Biryani', price: 160 },
+    { name: 'Veg Biryani', price: 160 }
+  ],
+  'Chatkara Chinese': [
+    { name: 'Veg Triple Rice', price: 160 },
+    { name: 'Veg Triple Noodles', price: 160 },
+    { name: 'Manchurian Rice', price: 160 },
+    { name: 'Manchurian Noodles', price: 160 },
+    { name: 'Schezwan Noodles', price: 160 },
+    { name: 'Fried Rice', price: 160 },
+    { name: 'Schezwan Fried Rice', price: 160 },
+    { name: 'Veg Hakka Noodles', price: 160 }
+  ],
+  'Mocktails': [
+    { name: 'Classic Mojito', price: 110 },
+    { name: 'Blue Lagoon', price: 110 },
+    { name: 'Green Apple Mojito', price: 110 },
+    { name: 'Strawberry Mojito', price: 110 },
+    { name: 'Cranberry Mojito', price: 110 },
+    { name: 'Lime Mojito', price: 110 }
+  ],
+  'Beverages': [
+    { name: 'Cold Coffee', price: 110 },
+    { name: 'KitKat Shake', price: 110 },
+    { name: 'Oreo Shake', price: 110 },
+    { name: 'Chocolate Shake', price: 110 },
+    { name: 'Mango Shake', price: 110 },
+    { name: 'Strawberry Shake', price: 110 },
+    { name: 'Choco-Chip Shake', price: 110 }
+  ],
+  'Signature Burgers': [
+    { name: 'Mexican Aloo Tikki Burger', price: 80 },
+    { name: 'Tandoori Aloo Tikki Burger', price: 80 },
+    { name: 'Veggie Cheese Burger', price: 90 },
+    { name: 'Spicy Paneer Burger', price: 100 },
+    { name: 'Cheesy Paneer Tikka Burger', price: 100 }
+  ],
+  'Sandwiches': [
+    { name: 'Veg Masala Sandwich', price: 80 },
+    { name: 'Veg Cheese Grill', price: 90 },
+    { name: 'Veg Club Sandwich', price: 100 },
+    { name: 'Cheese Chilli Sandwich', price: 90 },
+    { name: 'Paneer Tikka Sandwich', price: 100 }
+  ],
+  'All Day Snacks': [
+    { name: 'Fries', price: 80 },
+    { name: 'Cheese Fries', price: 100 },
+    { name: 'Peri Peri Fries', price: 100 },
+    { name: 'Veg Nuggets (6 pcs)', price: 90 },
+    { name: 'Cheese Balls (6 pcs)', price: 100 },
+    { name: 'Chilli Cheese Nuggets', price: 90 }
+  ]
+};
 
   const [cart, setCart] = useState({});
   const [showCheckout, setShowCheckout] = useState(false);
