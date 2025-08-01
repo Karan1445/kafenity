@@ -652,7 +652,7 @@ export default function App() {
             {!showSearch && searchQuery === '' ? (
               <>
                 <img src="logo192.png" alt="Restaurant Logo" className="header-logo" />
-                <h1>Kafenity</h1>
+                <h1>Kafenituuuu</h1>
               </>
             ) : (
               <div className="search-container">
