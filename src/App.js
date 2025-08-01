@@ -645,6 +645,9 @@ export default function App() {
 
   return (
     <div className="app-container">
+    <div className="fixed-logo">
+        <img src='Kafenity Logo CQ x7 6-1-2024.png' alt="Logo" />
+      </div>
       {/* Header with search - only show when not in checkout */}
       {!showCheckout && (
         <div className={`app-header`}>
