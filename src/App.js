@@ -666,7 +666,7 @@ const [selectedVariants, setSelectedVariants] = useState(() => {
           <div className="header-content">
             {!showSearch && searchQuery === '' ? (
               <>
-                <img src="logo1.png" alt="Restaurant Logo" className="header-logo" />
+                <img src="/logo1.png" alt="Restaurant Logo" className="header-logo" />
                 <h1>Kafenity</h1>
               </>
             ) : (
