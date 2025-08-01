@@ -462,7 +462,18 @@ export default function App() {
   const [isJain, setIsJain] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedVariants, setSelectedVariants] = useState({});
+const [selectedVariants, setSelectedVariants] = useState(() => {
+  const defaults = {};
+  // Initialize with first variant for each item that has variants
+  Object.values(menuData.items).forEach(categoryItems => {
+    categoryItems.forEach(item => {
+      if (item.variants && item.variants.length > 0) {
+        defaults[item.name] = item.variants[0].type;
+      }
+    });
+  });
+  return defaults;
+});
   const [searchResults, setSearchResults] = useState([]);
   const [showAllCategories, setShowAllCategories] = useState(true);
 
@@ -564,8 +575,8 @@ export default function App() {
       .join('\n');
 
     const specialRequests = [
-      isJain && '->JAIN ORDER',
-      instructions && `->Cooking Instructions: ${instructions}`
+      isJain && '🟢 JAIN ORDER',
+      instructions && `📝 Cooking Instructions: ${instructions}`
     ].filter(Boolean).join('\n');
 
     const text = `*New Order*\n\nName: *${name}*\nTable: *${dineType === 'dine' ? table : 'Takeaway'}*\nTime: ${orderTime}\n\n${orderDetails}\n\n${specialRequests}\n*Total*: ₹${totalAmount}`;
@@ -644,8 +655,9 @@ export default function App() {
   };
 
   return (
+   
     <div className="app-container">
-    <div className="fixed-logo">
+      <div className="fixed-logo">
         <img src='Kafenity Logo CQ x7 6-1-2024.png' alt="Logo" />
       </div>
       {/* Header with search - only show when not in checkout */}
@@ -654,12 +666,12 @@ export default function App() {
           <div className="header-content">
             {!showSearch && searchQuery === '' ? (
               <>
-                <img src="logo192.png" alt="Restaurant Logo" className="header-logo" />
+                <img src="logo1.png" alt="Restaurant Logo" className="header-logo" />
                 <h1>Kafenity</h1>
               </>
             ) : (
               <div className="search-container">
-               <span className="search-icon">🔍</span>
+                  <span className="search-icon">🔍</span>
                 <input
                   type="text"
                   placeholder="Search menu items..."
@@ -768,7 +780,7 @@ export default function App() {
                     </button>
                     <button 
                       className="cart-btn plus"
-                      onClick={() => addToCart(item, item.variantType || 'Regular')}
+                      onClick={() => addToCart(item, item.variantType || item.variants?.[0])}
                     >
                       +
                     </button>
