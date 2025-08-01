@@ -659,6 +659,7 @@ export default function App() {
               </>
             ) : (
               <div className="search-container">
+               <span className="search-icon">🔍</span>
                 <input
                   type="text"
                   placeholder="Search menu items..."
