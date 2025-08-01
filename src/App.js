@@ -564,8 +564,8 @@ export default function App() {
       .join('\n');
 
     const specialRequests = [
-      isJain && '🟢 JAIN ORDER',
-      instructions && `📝 Cooking Instructions: ${instructions}`
+      isJain && '->JAIN ORDER',
+      instructions && `->Cooking Instructions: ${instructions}`
     ].filter(Boolean).join('\n');
 
     const text = `*New Order*\n\nName: *${name}*\nTable: *${dineType === 'dine' ? table : 'Takeaway'}*\nTime: ${orderTime}\n\n${orderDetails}\n\n${specialRequests}\n*Total*: ₹${totalAmount}`;
