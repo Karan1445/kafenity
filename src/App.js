@@ -651,7 +651,7 @@ export default function App() {
           <div className="header-content">
             {!showSearch && searchQuery === '' ? (
               <>
-                <img src="%PUBLIC_URL%/logo192.png" alt="Restaurant Logo" className="header-logo" />
+                <img src="logo192.png" alt="Restaurant Logo" className="header-logo" />
                 <h1>Kafenity</h1>
               </>
             ) : (
